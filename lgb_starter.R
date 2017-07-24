@@ -117,3 +117,10 @@ preds <- predict(model, data = as.matrix(test), n = model$best_iter)
 sub <- data.table(ID = test$ID, click = preds)
 fwrite(sub, "lgb_starter.csv") #~ 0.6298
 
+# What to do next ? 
+# 1. Tune the parameters
+# 2. Create more features
+# 3. Try different models and ensemble
+       
+       
+       
