@@ -1,9 +1,11 @@
 path <- #set path
 setwd(path)
 
-# This data set
+# load libraries
 
 library(data.table)
+library(lubridate)
+library(lightgbm)
 
 # load data 
 
@@ -62,8 +64,6 @@ for(x in seq(cols))
   
 # Extract features from datetime variable
 # datetime is the timestamp at which ad got live on web
-
-library(lubridate)
 train[,datetime := as.POSIXct(datetime, format = "%Y-%m-%d %H:%M:%S")]
 test[,datetime := as.POSIXct(datetime, format = "%Y-%m-%d %H:%M:%S")]
 
@@ -79,8 +79,7 @@ test[,tminute := minute(datetime)]
 # Model Training
 # using lightgbm for faster training than xgb
 # since data is large, instead of cross validation, we'll do hold out validation
-library(lightgbm,quietly = T)
-
+library(lightgbm)
 
 train <- train[,.(siteid, offerid, category, merchant, countrycode, browserid, devid, tweekday, thour, tminute, click)]
 test <- test[,.(siteid, offerid, category, merchant, countrycode, browserid, devid, tweekday, thour, tminute)]
@@ -116,19 +115,5 @@ preds <- predict(model, data = as.matrix(test), n = model$best_iter)
 
 # make submission
 sub <- data.table(ID = test$ID, click = preds)
-fwrite(sub, "lgb_starter.csv") #0.6298
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+fwrite(sub, "lgb_starter.csv") #~ 0.6298
 
