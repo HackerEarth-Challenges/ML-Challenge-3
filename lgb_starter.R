@@ -1,4 +1,4 @@
-path <- "/home/manish/Desktop/ML_Challenge_Creatives/ML_Challenge_3/de/kasandra/finals/data/"
+path <- #set path
 setwd(path)
 
 # This data set
