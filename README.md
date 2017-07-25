@@ -7,6 +7,6 @@ In this competition, the participants have to predict whether an ad will get cli
 **Competition Duration:** 22nd July 2017 to 14th August 2017 <br />
 **Evaluation Metric:** AUC-ROC <br />
 **Competition Prize:** $700 (1st Rank), $500 (2nd Rank) <br />
-**Competition Link:** [!Predict Ad Click](https://www.hackerearth.com/challenge/competitive/machine-learning-challenge-3/problems/)
+**Competition Link:** [Predict Ad Click](https://www.hackerearth.com/challenge/competitive/machine-learning-challenge-3/problems/)
 
 
