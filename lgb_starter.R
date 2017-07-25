@@ -119,7 +119,8 @@ fwrite(sub, "lgb_starter.csv") #~ 0.6298
 
 # What to do next ? 
 # 1. Tune the parameters
-# 2. Create more features
+# 2. Instead of count encoding, try doing label encoding (as.integer(as.factor(x))-1)
+# 3. Create more features
 # 3. Try different models and ensemble
        
        
