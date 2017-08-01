@@ -80,9 +80,12 @@ test[,tminute := minute(datetime)]
 # using lightgbm for faster training than xgb
 # since data is large, instead of cross validation, we'll do hold out validation
 library(lightgbm)
+library(caret)
 
 train <- train[,.(siteid, offerid, category, merchant, countrycode, browserid, devid, tweekday, thour, tminute, click)]
 test <- test[,.(siteid, offerid, category, merchant, countrycode, browserid, devid, tweekday, thour, tminute)]
+
+folds <- createDataPartition(train$click, p = 0.5, list=F)
 
 trainX <- train[!folds]
 valX <- train[folds]
