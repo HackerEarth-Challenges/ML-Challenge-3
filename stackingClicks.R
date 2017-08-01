@@ -1,9 +1,9 @@
 
-# This script is meant to help you get started with building stacked models in R.
-# There are libraries caret, H2o where stacking happens automatically and many of us never know how it happens.
-# This script will help you understand how stacking happens and provide your more control on the process.
+# This script will  help you get started with building stacked models in R.
+# Although, there are libraries like caret, H2o where stacking happens automatically and many of us never know what happens at back.
+# This script will help you understand how stacking happens and will provide your more control of the process.
 
-# This script build 5 XGB Models in L1 and finally a Logistic Regression model on top of them.
+# This script builds 5 XGB Models in L1 and finally a Logistic Regression model on top of them.
 
 path <- "add path"
 setwd(path)
