@@ -181,9 +181,9 @@ for (i in seq(coseed))
 oof_train$seed <- as.factor(oof_train$seed)
 mastertrain <- split(oof_train, oof_train$seed)
 
-for(x in seq(mastetrain))
+for(x in seq(mastertrain))
 {
-  assign(paste0("oof_train_",x), data.table(mastetrain[[x]]))
+  assign(paste0("oof_train_",x), data.table(mastertrain[[x]]))
 }
 
 setnames(oof_train_1,"predict","pred_seed_1")
